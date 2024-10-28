@@ -96,13 +96,10 @@ public class TaxCalculations {
 		public static void payYourTax(Connection con,int id) throws SQLException 
 		
 		{
-			if(taxAmount>0)
-			{
 			PreparedStatement ps=con.prepareStatement("update tax_details set taxRate=0,taxAmount=0 where id= ?");
 			ps.setInt(1, id);
 			ps.execute();
 			System.out.println("Payment is successfull you can check your tax info");
-			}
 //			if(taxAmount==0)
 //			{
 //				
